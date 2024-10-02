@@ -1,0 +1,16 @@
+services:
+  db:
+    container_name: almacen-postgres
+    image: postgres
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5010:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: almacen
+
+volumes:
+  postgres_data:
